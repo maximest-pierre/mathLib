@@ -45,3 +45,35 @@ def polarToCartesian(r, angle):
     y = r * np.sin(angle)
 
     return (x, y)
+
+#Return the hypothenuse of a triangle
+def pythagore(a,b):
+    c = np.sqrt(a**2 + b**2)
+    return c
+
+#return the result of the equation leave zero to  if there is nothing to solve return zero
+def lawOfSines(a,A,b,B):
+    if(a == 0):
+        a = (np.sin(A)*b) / np.sin(B)
+
+        return a
+
+    if(b == 0):
+
+        b= (a * np.sin(B)) / np.sin(A)
+
+        return b
+
+    if(A == 0):
+
+        A = np.arcsin( b / (np.sin(B) * a) )
+
+        return A
+
+    if(B == 0):
+
+        B = np.arcsin(a / (np.sin(A) * b))
+
+        return B
+
+    return 0
